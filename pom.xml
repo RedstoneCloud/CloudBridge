@@ -16,6 +16,7 @@
         <version.allay>0.1.2</version.allay>
         <version.waterdogpe>2.0.3-SNAPSHOT</version.waterdogpe>
         <version.powernukkitx>master-SNAPSHOT</version.powernukkitx>
+        <version.nukkit>1.0-SNAPSHOT</version.nukkit>
     </properties>
 
     <repositories>
@@ -81,6 +82,13 @@
             <groupId>com.github.AllayMC.Allay</groupId>
             <artifactId>api</artifactId>
             <version>${version.allay}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.nukkit</groupId>
+            <artifactId>nukkit</artifactId>
+            <version>${version.nukkit}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

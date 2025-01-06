@@ -1,0 +1,9 @@
+name: CloudBridge
+main: de.redstonecloud.bridge.platform.nukkit.NukkitPlugin
+load: STARTUP
+version: 1.0
+api: 1.0.0
+
+description: CloudBridge for RedstoneCloud
+author: RedstoneCloud
+website: https://github.com/RedstoneCloud
