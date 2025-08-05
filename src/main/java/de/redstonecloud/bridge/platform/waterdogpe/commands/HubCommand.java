@@ -21,7 +21,7 @@ public class HubCommand extends Command {
         if(!(sender instanceof ProxiedPlayer)) return false;
         ServerInfo hub = WDPEHandler.fetchServer();
         if(hub == null) {
-            sender.sendMessage(CloudInterface.getBridgeConfig().has("hubcommand_no_hub_avaiable") ? CloudInterface.getBridgeConfig().get("hubcommand_no_hub_avaiable").getAsString() : "No hub avaiable");
+            sender.sendMessage(CloudInterface.getBridgeConfig().has("hubcommand_no_hub_available") ? CloudInterface.getBridgeConfig().get("hubcommand_no_hub_available").getAsString() : "No hub available");
             return true;
         }
 
