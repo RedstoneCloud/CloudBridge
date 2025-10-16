@@ -15,7 +15,7 @@ public class PNXExecutor implements BridgeExecutor {
     private static Server server = Server.getInstance();
 
     public Player getPlayerByCloudPlayer(ICloudPlayer player) {
-        return server.getPlayer(UUID.fromString(player.getUUID())).get();
+        return server.getPlayer(player.getUUID()).orElse(null);
     }
 
     public void sendMessage(ICloudPlayer cloudPlayer, String message) {

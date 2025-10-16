@@ -120,7 +120,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_SEND_MESSAGE.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -132,7 +132,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_ACTIONBAR.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -144,7 +144,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_SEND_TITLE.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -157,7 +157,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_TOAST.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -169,7 +169,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_CONNECT.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -181,7 +181,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_KICK.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();

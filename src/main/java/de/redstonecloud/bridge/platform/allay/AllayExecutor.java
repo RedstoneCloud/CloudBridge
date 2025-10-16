@@ -16,11 +16,11 @@ public class AllayExecutor implements BridgeExecutor {
     private static Server server = Server.getInstance();
 
     public EntityPlayer getPlayerByCloudPlayer(ICloudPlayer player) {
-        return server.getPlayerService().getPlayers().get(UUID.fromString(player.getUUID()));
+        return server.getPlayerManager().getPlayers().get(player.getUUID());
     }
 
     public void sendMessage(ICloudPlayer cloudPlayer, String message) {
-        Objects.requireNonNull(getPlayerByCloudPlayer(cloudPlayer)).sendText(message);
+        Objects.requireNonNull(getPlayerByCloudPlayer(cloudPlayer)).sendMessage(message);
     }
 
     @Override

@@ -57,7 +57,7 @@ public class WDPEExecutor implements BridgeExecutor {
     }
 
     public ProxiedPlayer getPlayerByCloudPlayer(ICloudPlayer player) {
-        return server.getPlayer(UUID.fromString(player.getUUID()));
+        return server.getPlayer(player.getUUID());
     }
 
     public void sendMessage(ICloudPlayer cloudPlayer, String message) {
