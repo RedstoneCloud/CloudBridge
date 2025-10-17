@@ -20,6 +20,7 @@ import de.redstonecloud.bridge.cloudinterface.redis.broker.ProxyHandler;
 import lombok.Getter;
 
 import java.io.File;
+import java.util.UUID;
 
 @Getter
 public class CloudInterface {
@@ -99,7 +100,7 @@ public class CloudInterface {
     public void playerLogin(String name, String uuid, String ip) {
         new PlayerConnectPacket()
                 .setPlayerName(name)
-                .setUuid(uuid)
+                .setUuid(UUID.fromString(uuid))
                 .setIpAddress(ip)
                 .setServer(currentServerStartup.getName().toUpperCase())
                 .setTo("cloud")
@@ -108,7 +109,7 @@ public class CloudInterface {
 
     public void playerDisconnect(String uuid) {
         new PlayerDisconnectPacket()
-                .setUuid(uuid)
+                .setUuid(UUID.fromString(uuid))
                 .setServer(currentServerStartup.getName().toUpperCase())
                 .setTo("cloud")
                 .send();

@@ -39,7 +39,7 @@ public class BridgePlayer implements ICloudPlayer {
                 .address(HostAndPort.fromString(data.address()))
                 .network(BridgeServer.readFromCache(data.network()))
                 .server(BridgeServer.readFromCache(data.server()))
-                .extraData(JsonParser.parseString(json.get("customData").getAsString()))
+                .extraData(data.extraData())
                 .build();
 
         return server;
