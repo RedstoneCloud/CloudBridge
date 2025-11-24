@@ -20,6 +20,7 @@ import de.redstonecloud.bridge.cloudinterface.redis.broker.ProxyHandler;
 import lombok.Getter;
 
 import java.io.File;
+import java.util.UUID;
 
 @Getter
 public class CloudInterface {
@@ -99,7 +100,7 @@ public class CloudInterface {
     public void playerLogin(String name, String uuid, String ip) {
         new PlayerConnectPacket()
                 .setPlayerName(name)
-                .setUuid(uuid)
+                .setUuid(UUID.fromString(uuid))
                 .setIpAddress(ip)
                 .setServer(currentServerStartup.getName().toUpperCase())
                 .setTo("cloud")
@@ -108,7 +109,7 @@ public class CloudInterface {
 
     public void playerDisconnect(String uuid) {
         new PlayerDisconnectPacket()
-                .setUuid(uuid)
+                .setUuid(UUID.fromString(uuid))
                 .setServer(currentServerStartup.getName().toUpperCase())
                 .setTo("cloud")
                 .send();
@@ -120,7 +121,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_SEND_MESSAGE.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -132,7 +133,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_ACTIONBAR.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -144,7 +145,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_SEND_TITLE.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -157,7 +158,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_TOAST.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -169,7 +170,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_CONNECT.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();
@@ -181,7 +182,7 @@ public class CloudInterface {
 
         new ServerActionPacket()
                 .setAction(ServerActions.PLAYER_KICK.name())
-                .setPlayerUuid(pl.getUUID())
+                .setPlayerUuid(pl.getUUID().toString())
                 .setExtraData(extraData)
                 .setTo(pl.getConnectedNetwork().getName())
                 .send();

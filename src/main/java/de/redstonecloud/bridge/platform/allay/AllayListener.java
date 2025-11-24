@@ -11,7 +11,7 @@ public class AllayListener {
     public void onLogin(PlayerLoginEvent ev) {
         EntityPlayer player = ev.getPlayer();
 
-        CloudInterface.getInstance().playerLogin(player.getOriginName(), player.getLoginData().getUuid().toString(), player.getClientSession().getSocketAddress().toString());
+        CloudInterface.getInstance().playerLogin(player.getOriginName(), player.getLoginData().getUuid().toString(), player.getSocketAddress().toString());
     }
 
     @EventHandler

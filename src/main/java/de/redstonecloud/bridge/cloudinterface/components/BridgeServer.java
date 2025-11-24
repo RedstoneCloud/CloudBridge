@@ -4,27 +4,35 @@ import com.google.common.net.HostAndPort;
 import com.google.gson.JsonObject;
 import de.redstonecloud.api.components.ICloudServer;
 import de.redstonecloud.api.components.ServerStatus;
+import de.redstonecloud.api.components.cache.ServerData;
+import de.redstonecloud.api.util.Keys;
 import de.redstonecloud.bridge.cloudinterface.CloudInterface;
 import lombok.Builder;
 import lombok.Getter;
+
+import java.util.UUID;
 
 @Builder
 @Getter
 public class BridgeServer implements ICloudServer {
     public static BridgeServer readFromCache(String serverName) {
-        String cachedData = CloudInterface.getCache().get("server:" + serverName.toUpperCase());
+        String cachedData = CloudInterface.getCache().get(Keys.CACHE_PREFIX_SERVER + serverName.toUpperCase());
 
         if(cachedData == null ||cachedData.isEmpty()) return null;
 
         JsonObject json = CloudInterface.GSON.fromJson(cachedData, JsonObject.class);
 
+        ServerData data = ServerData.parse(json);
+
         BridgeServer server = BridgeServer.builder()
-                .template(json.get("template").getAsString())
-                .name(json.get("name").getAsString())
-                .port(json.get("port").getAsInt())
-                .status(ServerStatus.valueOf(json.get("status").getAsString()))
-                .type(json.get("type").getAsString())
-                .isProxy(json.get("proxy").getAsBoolean())
+                .template(data.template())
+                .name(data.name())
+                .uuid(data.uuid())
+                .port(data.port())
+                .status(ServerStatus.valueOf(data.status()))
+                .type(data.serverType())
+                .isProxy(data.proxy())
+                .extraData(data.extraData())
                 .build();
 
         return server;
@@ -37,6 +45,8 @@ public class BridgeServer implements ICloudServer {
     protected String type;
     protected long createdAt;
     protected boolean isProxy;
+    protected UUID uuid;
+    protected JsonObject extraData;
 
     @Override
     public long getCreatedAt() {
@@ -65,5 +75,10 @@ public class BridgeServer implements ICloudServer {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public UUID getUUID() {
+        return uuid;
     }
 }

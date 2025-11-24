@@ -9,6 +9,7 @@ import dev.waterdog.waterdogpe.network.serverinfo.BedrockServerInfo;
 import dev.waterdog.waterdogpe.network.serverinfo.ServerInfo;
 import dev.waterdog.waterdogpe.player.ProxiedPlayer;
 import dev.waterdog.waterdogpe.scheduler.Task;
+import dev.waterdog.waterdogpe.utils.types.TextContainer;
 
 import java.net.InetSocketAddress;
 import java.util.Objects;
@@ -57,7 +58,7 @@ public class WDPEExecutor implements BridgeExecutor {
     }
 
     public ProxiedPlayer getPlayerByCloudPlayer(ICloudPlayer player) {
-        return server.getPlayer(UUID.fromString(player.getUUID()));
+        return server.getPlayer(player.getUUID());
     }
 
     public void sendMessage(ICloudPlayer cloudPlayer, String message) {
@@ -76,7 +77,7 @@ public class WDPEExecutor implements BridgeExecutor {
 
     @Override
     public void kick(ICloudPlayer player, String reason) {
-        Objects.requireNonNull(getPlayerByCloudPlayer(player)).disconnect(reason);
+        Objects.requireNonNull(getPlayerByCloudPlayer(player)).disconnect(new TextContainer(reason));
     }
 
     @Override
