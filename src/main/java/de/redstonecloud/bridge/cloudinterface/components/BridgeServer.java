@@ -33,6 +33,7 @@ public class BridgeServer implements ICloudServer {
                 .type(data.serverType())
                 .isProxy(data.proxy())
                 .extraData(data.extraData())
+                .address(data.address())
                 .build();
 
         return server;
@@ -47,6 +48,7 @@ public class BridgeServer implements ICloudServer {
     protected boolean isProxy;
     protected UUID uuid;
     protected JsonObject extraData;
+    protected String address;
 
     @Override
     public long getCreatedAt() {
@@ -55,7 +57,7 @@ public class BridgeServer implements ICloudServer {
 
     @Override
     public HostAndPort getAddress() {
-        return HostAndPort.fromParts("0.0.0.0", port);
+        return HostAndPort.fromParts(address, port);
     }
 
     @Override
