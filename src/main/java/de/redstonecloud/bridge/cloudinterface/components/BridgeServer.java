@@ -33,8 +33,7 @@ public class BridgeServer implements ICloudServer {
                 .type(data.serverType())
                 .isProxy(data.proxy())
                 .extraData(data.extraData())
-                //TODO: Re-add once fully implemented
-                //.address(data.address())
+                .address(data.address())
                 .build();
 
         return server;

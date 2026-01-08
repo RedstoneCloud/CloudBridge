@@ -13,7 +13,6 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <version.allay>master-SNAPSHOT</version.allay>
         <version.waterdogpe>2.0.3-SNAPSHOT</version.waterdogpe>
         <version.powernukkitx>2.0.0-SNAPSHOT</version.powernukkitx>
         <version.nukkit>1.0-SNAPSHOT</version.nukkit>
@@ -94,13 +93,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.allaymc.allay</groupId>
-            <artifactId>api</artifactId>
-            <version>${version.allay}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>cn.nukkit</groupId>
             <artifactId>nukkit</artifactId>
             <version>${version.nukkit}</version>
@@ -110,7 +102,7 @@
         <dependency>
             <groupId>de.redstonecloud</groupId>
             <artifactId>api</artifactId>
-            <version>0.1-beta</version>
+            <version>1.0.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
