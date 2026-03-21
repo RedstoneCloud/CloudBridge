@@ -54,8 +54,8 @@ public class WDPEHandler implements IForcedHostHandler, IReconnectHandler, IJoin
 
     public static ServerInfo fetchServer(ProxiedPlayer player) {
         JsonObject cfg = CloudInterface.getBridgeConfig();
-        if(!cfg.has("hub_template") && !cfg.has("fallback_name")) return null;
-        ServerInfo fallback = ProxyServer.getInstance().getServerInfo(cfg.get("fallback_name").getAsString());
+        ServerInfo fallback = fetchFallback();
+        if(!cfg.has("hub_template")) return fallback;
         boolean fallbackOnJoin = !cfg.has("fallback_on_join") || cfg.get("fallback_on_join").getAsBoolean();
 
         if(!cfg.has("hub_template"))
@@ -85,5 +85,11 @@ public class WDPEHandler implements IForcedHostHandler, IReconnectHandler, IJoin
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static ServerInfo fetchFallback() {
+        JsonObject cfg = CloudInterface.getBridgeConfig();
+        if(!cfg.has("fallback_name")) return null;
+        return ProxyServer.getInstance().getServerInfo(cfg.get("fallback_name").getAsString());
     }
 }
