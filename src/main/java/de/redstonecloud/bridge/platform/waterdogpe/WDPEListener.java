@@ -9,7 +9,7 @@ public class WDPEListener {
     public static void onLogin(PlayerLoginEvent ev) {
         ProxiedPlayer player = ev.getPlayer();
 
-        if(!ev.isCancelled()) CloudInterface.getInstance().playerLogin(player.getName(), player.getUniqueId().toString(), player.getAddress().getHostName());
+        if(!ev.isCancelled()) CloudInterface.getInstance().playerLogin(player.getName(), player.getUniqueId().toString(), player.getAddress().toString());
         if(ev.isCancelled()) CloudInterface.getInstance().playerDisconnect(player.getUniqueId().toString());
     }
 
