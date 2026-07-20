@@ -9,10 +9,9 @@ import de.redstonecloud.bridge.cloudinterface.components.BridgeExecutor;
 import de.redstonecloud.bridge.cloudinterface.components.BridgeServer;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class NukkitExecutor implements BridgeExecutor {
-    private static Server server = Server.getInstance();
+    private static final Server server = Server.getInstance();
 
     public Player getPlayerByCloudPlayer(ICloudPlayer player) {
         return server.getPlayer(player.getUUID()).get();
