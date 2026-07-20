@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <version.waterdogpe>2.0.3-SNAPSHOT</version.waterdogpe>
-        <version.powernukkitx>2.0.0-SNAPSHOT</version.powernukkitx>
+        <version.powernukkitx>nightly-SNAPSHOT</version.powernukkitx>
         <version.nukkit>1.0-SNAPSHOT</version.nukkit>
     </properties>
 
