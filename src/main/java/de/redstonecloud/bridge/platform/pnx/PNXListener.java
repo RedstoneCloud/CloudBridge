@@ -1,10 +1,10 @@
 package de.redstonecloud.bridge.platform.pnx;
 
-import  org.powernukkitx.Player;
-import  org.powernukkitx.event.EventHandler;
-import  org.powernukkitx.event.Listener;
-import  org.powernukkitx.event.player.PlayerLoginEvent;
-import  org.powernukkitx.event.player.PlayerQuitEvent;
+import org.powernukkitx.Player;
+import org.powernukkitx.event.EventHandler;
+import org.powernukkitx.event.Listener;
+import org.powernukkitx.event.player.PlayerLoginEvent;
+import org.powernukkitx.event.player.PlayerQuitEvent;
 import de.redstonecloud.bridge.cloudinterface.CloudInterface;
 
 public class PNXListener implements Listener {

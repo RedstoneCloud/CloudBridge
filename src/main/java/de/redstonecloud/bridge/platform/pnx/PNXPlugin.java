@@ -1,6 +1,6 @@
 package de.redstonecloud.bridge.platform.pnx;
 
-import  org.powernukkitx.plugin.PluginBase;
+import org.powernukkitx.plugin.PluginBase;
 import de.redstonecloud.bridge.cloudinterface.CloudInterface;
 
 public class PNXPlugin extends PluginBase {
