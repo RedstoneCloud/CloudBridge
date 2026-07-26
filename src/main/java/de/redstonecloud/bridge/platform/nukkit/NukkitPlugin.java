@@ -1,6 +1,6 @@
 package de.redstonecloud.bridge.platform.nukkit;
 
-import  org.powernukkitx.plugin.PluginBase;
+import cn.nukkit.plugin.PluginBase;
 import de.redstonecloud.bridge.cloudinterface.CloudInterface;
 
 public class NukkitPlugin extends PluginBase {

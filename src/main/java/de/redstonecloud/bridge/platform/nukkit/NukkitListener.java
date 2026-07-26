@@ -1,10 +1,10 @@
 package de.redstonecloud.bridge.platform.nukkit;
 
-import  org.powernukkitx.Player;
-import  org.powernukkitx.event.EventHandler;
-import  org.powernukkitx.event.Listener;
-import  org.powernukkitx.event.player.PlayerLoginEvent;
-import  org.powernukkitx.event.player.PlayerQuitEvent;
+import cn.nukkit.Player;
+import cn.nukkit.event.EventHandler;
+import cn.nukkit.event.Listener;
+import cn.nukkit.event.player.PlayerLoginEvent;
+import cn.nukkit.event.player.PlayerQuitEvent;
 import de.redstonecloud.bridge.cloudinterface.CloudInterface;
 
 public class NukkitListener implements Listener {
@@ -12,7 +12,7 @@ public class NukkitListener implements Listener {
     public void onLogin(PlayerLoginEvent ev) {
         Player player = ev.getPlayer();
 
-        CloudInterface.getInstance().playerLogin(player.getName(), player.getUniqueId().toString(), player.getRawSocketAddress().toString());
+        CloudInterface.getInstance().playerLogin(player.getName(), player.getUniqueId().toString(), player.getSocketAddress().toString());
     }
 
     @EventHandler

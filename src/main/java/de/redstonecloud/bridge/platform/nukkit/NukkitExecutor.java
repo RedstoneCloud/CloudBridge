@@ -1,8 +1,8 @@
 package de.redstonecloud.bridge.platform.nukkit;
 
-import  org.powernukkitx.Player;
-import  org.powernukkitx.Server;
-import  org.powernukkitx.scheduler.Task;
+import cn.nukkit.Player;
+import cn.nukkit.Server;
+import cn.nukkit.scheduler.Task;
 import com.google.common.net.HostAndPort;
 import de.redstonecloud.api.components.ICloudPlayer;
 import de.redstonecloud.bridge.cloudinterface.components.BridgeExecutor;
