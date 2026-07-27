@@ -14,7 +14,7 @@ public class NukkitExecutor implements BridgeExecutor {
     private static final Server server = Server.getInstance();
 
     public Player getPlayerByCloudPlayer(ICloudPlayer player) {
-        return server.getPlayer(player.getUUID()).get();
+        return server.getPlayer(player.getUUID()).orElse(null);
     }
 
     public void sendMessage(ICloudPlayer cloudPlayer, String message) {
