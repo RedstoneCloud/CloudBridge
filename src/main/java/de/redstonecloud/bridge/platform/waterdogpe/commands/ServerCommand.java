@@ -59,12 +59,12 @@ public class ServerCommand extends Command {
         CommandParamData server = new CommandParamData();
         server.setName("server");
         server.setOptional(false);
-        server.setType(CommandParam.TEXT);
+        server.setType(CommandParam.ID);
 
         CommandParamData player = new CommandParamData();
         player.setName("player");
         player.setOptional(true);
-        player.setType(CommandParam.TARGET);
+        player.setType(CommandParam.SELECTION);
         return new CommandOverloadData[]{new CommandOverloadData(false, new CommandParamData[]{server, player})};
     }
 }

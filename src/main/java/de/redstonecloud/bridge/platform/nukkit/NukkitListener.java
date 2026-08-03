@@ -12,7 +12,7 @@ public class NukkitListener implements Listener {
     public void onLogin(PlayerLoginEvent ev) {
         Player player = ev.getPlayer();
 
-        CloudInterface.getInstance().playerLogin(player.getName(), player.getUniqueId().toString(), player.getRawSocketAddress().toString());
+        CloudInterface.getInstance().playerLogin(player.getName(), player.getUniqueId().toString(), player.getSocketAddress().toString());
     }
 
     @EventHandler

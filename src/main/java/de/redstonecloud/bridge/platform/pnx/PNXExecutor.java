@@ -1,15 +1,14 @@
 package de.redstonecloud.bridge.platform.pnx;
 
-import cn.nukkit.Player;
-import cn.nukkit.Server;
-import cn.nukkit.scheduler.Task;
+import org.powernukkitx.Player;
+import org.powernukkitx.Server;
+import org.powernukkitx.scheduler.Task;
 import com.google.common.net.HostAndPort;
 import de.redstonecloud.api.components.ICloudPlayer;
 import de.redstonecloud.bridge.cloudinterface.components.BridgeExecutor;
 import de.redstonecloud.bridge.cloudinterface.components.BridgeServer;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class PNXExecutor implements BridgeExecutor {
     private static Server server = Server.getInstance();
